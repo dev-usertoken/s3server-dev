@@ -1,0 +1,32 @@
+# OS X
+.DS_Store
+
+# IntelliJ
+/.idea
+*.iml
+
+# eclipse
+/kinetic-client/.settings
+/kinetic-simlator/.settings
+/kinetic-test/.settings
+
+# python
+*.egg-info
+
+# build products
+src/main/python/kinetic/kinetic_pb2.py
+/*/doc
+/*/target
+/*/test-output
+/test-output
+/*/kinetic_log
+
+/tmp
+database.db
+*.pid
+*.swp
+*.log
+*.result
+/target
+
+#/kinetic-common/src/main/java/com/seagate/kinetic/proto/kinetic.proto

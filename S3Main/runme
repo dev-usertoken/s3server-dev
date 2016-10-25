@@ -1,0 +1,3 @@
+export S3DATAPATH="/Volumes/ALEX2006HW/tmp/data"
+export S3METADATAPATH="/Volumes/ALEX2006HW/tmp/meta"
+npm start

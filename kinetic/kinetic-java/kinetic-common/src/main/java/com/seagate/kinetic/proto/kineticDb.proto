@@ -1,0 +1,56 @@
+/**
+ *
+ * Copyright (C) 2014 Seagate Technology.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ *
+ */
+import "kinetic.proto";
+
+package com.seagate.kinetic.proto;
+
+option java_outer_classname = "KineticDb";
+
+/**
+ * persisted entry value message format.
+ * <p>
+ * db persisted entry (KVValue)
+ */
+ message Versioned {
+
+//metadata
+  optional Metadata metadata = 1;
+  //entry value/data
+  optional bytes value = 2;
+
+  //key/value entry op metadata
+  message Metadata {
+  //entry key
+    optional bytes key = 1;
+
+    //entry version in store
+    optional bytes dbVersion = 2;
+
+    // this is the integrity value of the data. This may or may not be in the clear, depending on the algorithm
+    // used.
+    optional bytes tag = 3;
+
+    // The following is for the protection of the data. If the data is protected with a hash or CRC, then
+    // the algorithm will be negative. If the data protection algorithm is not a standard unkeyed algorithm
+    // then  a positive number is used and the drive has no idea what the key is. See the discussion of
+    // encrypted key/value store.(See security document).
+    optional Command.Algorithm algorithm = 4;
+    }
+  }

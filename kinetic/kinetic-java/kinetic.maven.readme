@@ -1,0 +1,22 @@
+Maven command line for kinetic
+==================================
+
+NOTE: please verify all the required "Suggested Development Environments" are satisfied as stated at the link (README.md):
+https://github.com/Kinetic/kinetic-java 
+
+NOTE: Please also verify that JAVA_HOME is defined in your development environment:
+http://maven.apache.org/download.cgi
+
+To build kinetic-java projects, run maven command line in <Kinetic-Folder>:
+
+1. Build/compile kinetic:
+   mvn clean compile
+   
+2. Execute unit test cases:
+   mvn clean test
+   
+3. Build kinetic package:
+   mvn clean package
+   
+   To skip test cases:
+   mvn clean package -Dmaven.test.skip=true or mvn clean package -DskipTests

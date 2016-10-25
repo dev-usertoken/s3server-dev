@@ -1,0 +1,22 @@
+# OS X
+.DS_Store
+
+# IntelliJ
+/.idea
+*.iml
+
+# eclips
+
+# build products
+/*/doc
+/*/target
+/*/test-output
+/test-output
+
+/tmp
+*.pid
+*.swp
+*.log
+*.result
+/target
+

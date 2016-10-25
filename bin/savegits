@@ -1,0 +1,10 @@
+GITS=$(find . -name .git)
+PWD=`pwd`/../savegits
+ID=`whoami`
+
+for gits in $GITS; do
+  echo $gits
+  mkdir -p $PWD/$gits
+  sudo cp -r $gits $PWD/$gits
+done
+  sudo /usr/sbin/chown -R $ID $PWD/$gits
