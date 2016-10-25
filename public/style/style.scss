@@ -1,0 +1,130 @@
+$brand: #3592FF;
+$gray: rgba(0,0,0,0.04);
+$black: rgba(0,0,0,0.88);
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: rgba($brand, 0.1) !important;
+  height: 100%;
+  padding-top: 40px;
+}
+
+.navbar-a{
+    z-index: 1;
+    background: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right:0px;
+    width: 100%;
+    padding: 10px;
+    font-weight: 500;
+    box-shadow: 0px 0px 2px 0px rgba($black, 0.5);
+    .logo {
+        float: right;
+        font-weight: 100;
+        padding-right: 10px;
+    }
+    .behavior-button {
+        text-transform: uppercase;
+        border-radius: 2px;
+        padding: 5px 20px;
+        cursor: pointer;
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        position: relative;
+        top: -1px;
+        user-select: none;
+        margin-left: 5px;
+        margin-right: 5px;
+        &.action {
+            background: $brand;
+            color: white;
+            transition: .1s background;
+            border: 1px darken($brand, 10%);
+            &:hover {
+                background: darken($brand, 10%);
+                box-shadow: 0px 1px 5px -2px rgba($black, 0.9);
+            }
+            &:active {
+                background: darken($brand, 20%);
+            }
+        }
+        &.default {
+            background: $gray;
+            color: $black;
+            border: 1px solid rgba($black, 0.1);
+            &:hover {
+                border: 1px solid rgba($black, 0.2);
+                background: darken($gray, 10%);
+            }
+            &:active {
+                background: rgba($black, 0.08);
+                border: 1px solid rgba($black, 0.4);
+                transition: .1s background;
+            }
+        }
+    }
+    input[type=file].file-upload-btn {
+        display: none;
+    }
+    label {
+        margin-bottom: 0px;
+    }
+}
+.title {
+    font-weight: 200 !important;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+}
+.template{
+    display: none !important;
+}
+.panel-default {
+    border: 0px solid !important;
+    margin-bottom: 5px !important;
+}
+.bucketItem, .fileItem {
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid rgba($brand, 0) !important;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    .bucketname {
+        font-weight: 700;
+    }
+    .filename {
+        font-weight: 700;
+    }
+    .filenum {
+        float: right;
+        position: relative;
+        transition: .2s all ease-in-out;
+    }
+    &:hover{
+        color: darken($brand, 20%);
+        background: rgba($brand, 0.09);
+        // color: white;
+        border: 1px solid rgba($brand, 1) !important;
+        .arrow {
+            position: absolute;
+            right: 10px;
+            top: 15px;
+        }
+        .filenum {
+            right: 20px;
+            transition: .2s all ease-in-out;
+        }
+    }
+    &:active{
+        background: rgba($brand, 0.29);
+        border: 1px solid rgba($brand, 1);
+    }
+    .arrow {
+        
+        transition: .2s all ease-in-out;
+        position: absolute;
+        right: -15px;
+        top: 15px;
+    }
+}
